@@ -1,102 +1,61 @@
 <!doctype html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
-    <title>默认样式信息窗体</title>
-    <link rel="stylesheet" href="https://a.amap.com/jsapi_demos/static/demo-center/css/demo-center.css"/>
+    <title>家乡地图 | 马杰成 | 通信与计算机网络第3周API作业</title>
+    <link rel="stylesheet" href="demo-center.css"/>
     <style>
         html, body, #container {
             height: 100%;
             width: 100%;
         }
-
-        .content-window-card {
-            position: relative;
-            box-shadow: none;
-            bottom: 0;
-            left: 0;
-            width: auto;
-            padding: 0;
-        }
-
-        .content-window-card p {
-            height: 2rem;
-        }
-
-        .custom-info {
-            border: solid 1px silver;
-        }
-
-        div.info-top {
-            position: relative;
-            background: none repeat scroll 0 0 #F9F9F9;
-            border-bottom: 1px solid #CCC;
-            border-radius: 5px 5px 0 0;
-        }
-
-        div.info-top div {
-            display: inline-block;
-            color: #333333;
-            font-size: 14px;
-            font-weight: bold;
-            line-height: 31px;
-            padding: 0 10px;
-        }
-
-        div.info-top img {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            transition-duration: 0.25s;
-        }
-
-        div.info-top img:hover {
-            box-shadow: 0px 0px 5px #000;
-        }
-
-        div.info-middle {
-            font-size: 12px;
-            padding: 10px 6px;
-            line-height: 20px;
-        }
-
-        div.info-bottom {
-            height: 0px;
-            width: 100%;
-            clear: both;
-            text-align: center;
-        }
-
-        div.info-bottom img {
-            position: relative;
-            z-index: 104;
-        }
-
-        span {
-            margin-left: 5px;
-            font-size: 11px;
-        }
-
-        .info-middle img {
-            float: left;
-            margin-right: 6px;
-        }
+        a{text-decoration:none} 
+        a:hover{text-decoration:underline}
+        p{letter-spacing:3px}
     </style>
 </head>
+
 <body>
-<div id="container"></div>
-<div class="info">
-    点击地图上的点标记，打开所添加的自定义信息窗体
+<div id="container" 
+        style=
+        "width:60vw; 
+        height: 40vw;
+        top: 1vw;
+        display: table; 
+        margin: 0 auto; 
+        border-radius: .5rem;
+        box-shadow: 0 0 6px 0 rgba(2, 17, 34, 0.829);">
 </div>
+
+<div class="info" style="color:#666666;letter-spacing:1px">
+    通信与计算机网络第 3 周 API 作业 | 马杰成 3190102614 信息管理与信息系统 1901</div>
+<p style="margin: 2vw auto;font-size:0.8vw; text-align:center; color:#818181">▲点击地图上的点标记</p></div>
+
+<div> <h1 style="font-size:4vw; display: table; margin: 3vw auto;letter-spacing:5px">浙江温州</h1></div>
+<div style="display: table; margin: 2vw auto; color:#86868b"> 
+    <p style="font-size:1.5vw; text-align:center">简称“温”或“瓯”，别名“鹿城”</p>
+    <p style="font-size:1.5vw; text-align:center">因传说筑城时，有白鹿衔花而过</p>
+    <p style="font-size:1.5vw; text-align:center">素有“东南山水甲天下”之美誉</p>
+    <p style="font-size:1.5vw; text-align:center">是中国民营经济发展的先发地区与改革开放的前沿阵地</p></div>
+<div style='font-size:1.5vw; display: table; margin: 1vw auto;letter-spacing:3px'>
+    <a  style='color:#0066cc' href='https://baike.baidu.com/item/%E6%B8%A9%E5%B7%9E/212091' target='_blank'>百度百科></a> &nbsp;
+    <a  style='color:#0066cc' href='https://zh.wikipedia.org/wiki/%E6%B8%A9%E5%B7%9E%E5%B8%82' target='_blank'>维基百科></a> &nbsp;
+    <a  style='color:#0066cc' href='https://www.cc98.org/board/479' target='_blank'>CC98></a></div>
+    <p style="margin: 2vw auto;font-size:0.8vw; text-align:center; color:#818181">▼温州五马步行街</p></div>
+<div><img src='WumaStreet.jpg'  style="width:60vw; display: table; margin: 0vw auto;"></div>
+
 <script type="text/javascript"
-        src="https://webapi.amap.com/maps?v=1.4.15&key=	90960782b5de6c9fe4cb5487a10c2f63"></script>
+        src="https://webapi.amap.com/maps?v=1.4.15&key=90960782b5de6c9fe4cb5487a10c2f63"></script>
 <script type="text/javascript">    //地图初始化时，在地图上添加一个marker标记,鼠标点击marker可弹出自定义的信息窗体
 var map = new AMap.Map("container", {
+    pitch:75,
+    viewMode:'3D',
     resizeEnable: true,
-    center: [116.481181, 39.989792],
-    zoom: 16
+    center: [120.699, 27.993],
+    zoom: 11
 });
 addMarker();
 
@@ -105,7 +64,7 @@ function addMarker() {
     map.clearMap();
     var marker = new AMap.Marker({
         map: map,
-        position: [116.481181, 39.989792]
+        position: [120.699, 27.993]
     });
     //鼠标点击marker弹出自定义的信息窗体
     AMap.event.addListener(marker, 'click', function () {
@@ -114,11 +73,10 @@ function addMarker() {
 }
 
 //实例化信息窗体
-var title = '方恒假日酒店<span style="font-size:11px;color:#F00;">价格:318</span>',
+var title = '浙江温州<span style="font-size:12px;color:#666666;letter-spacing:1px">金瓯白鹿城</span>',
     content = [];
-content.push("<img src='http://tpc.googlesyndication.com/simgad/5843493769827749134'>地址：北京市朝阳区阜通东大街6号院3号楼东北8.3公里");
-content.push("电话：010-64733333");
-content.push("<a href='https://ditu.amap.com/detail/B000A8URXB?citycode=110105'>详细信息</a>");
+content.push("<img src='WumaStreet.jpg'  width=100><span style='text-align:justify; text-justify:inter-ideograph;letter-spacing:1px'>温州市，简称“温”或“瓯”，别称“鹿城”，素有“东南山水甲天下”之美誉，是中国民营经济发展的先发地区与改革开放的前沿阵地。</span>");
+content.push("<a href='https://baike.baidu.com/item/%E6%B8%A9%E5%B7%9E/212091' target='_blank'>百度百科</a> <a  href='https://zh.wikipedia.org/wiki/%E6%B8%A9%E5%B7%9E%E5%B8%82' target='_blank'>维基百科</a>");
 var infoWindow = new AMap.InfoWindow({
     isCustom: true,  //使用自定义窗体
     content: createInfoWindow(title, content.join("<br/>")),
@@ -130,9 +88,7 @@ function createInfoWindow(title, content) {
     var info = document.createElement("div");
     info.className = "custom-info input-card content-window-card";
 
-    //可以通过下面的方式修改自定义窗体的宽高
-    //info.style.width = "400px";
-    // 定义顶部标题
+    //顶部标题
     var top = document.createElement("div");
     var titleD = document.createElement("div");
     var closeX = document.createElement("img");
@@ -145,14 +101,14 @@ function createInfoWindow(title, content) {
     top.appendChild(closeX);
     info.appendChild(top);
 
-    // 定义中部内容
+    //中部内容
     var middle = document.createElement("div");
     middle.className = "info-middle";
     middle.style.backgroundColor = 'white';
     middle.innerHTML = content;
     info.appendChild(middle);
 
-    // 定义底部内容
+    //底部内容
     var bottom = document.createElement("div");
     bottom.className = "info-bottom";
     bottom.style.position = 'relative';
@@ -171,4 +127,5 @@ function closeInfoWindow() {
 }
 </script>
 </body>
+
 </html>
