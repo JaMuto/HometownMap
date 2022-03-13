@@ -229,7 +229,6 @@ h4 {
   top: 4vw;
   background-color: white;
   width: auto;
-  min-width: 22rem;
   border-width: 0;
   box-shadow: 0 1px 6px 0 rgba(4, 54, 163, 0.5);
 }
