@@ -6,4 +6,4 @@
 
 使用 PC 打开效果最佳。
 
-网页链接：https://jamuto.github.io/homeMap/
+网页链接：https://jamuto.github.io/hometown-map/
